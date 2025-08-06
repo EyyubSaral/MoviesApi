@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A6C1C9FA-A839-4055-BA2B-2A5507895247}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{18611A2D-7BA9-4D7D-AE7D-174A8C4C8C88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "İnfrastructure", "İnfrastructure", "{2031535D-265D-4AA7-B2EF-55A59269007E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Domain", "Core\MoviesApi.Domain\MoviesApi.Domain.csproj", "{E7E08A7C-611D-4755-9187-74ED1BB2DC40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Application", "Core\MoviesApi.Application\MoviesApi.Application.csproj", "{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.İnfrastructure", "İnfrastructure\MoviesApi.İnfrastructure\MoviesApi.İnfrastructure.csproj", "{E1188804-B126-481F-9B4D-C3D5AD53EF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Persistence", "İnfrastructure\MoviesApi.Persistence\MoviesApi.Persistence.csproj", "{0B780770-B6A5-4396-97D2-D2707F687C00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Api", "Presentation\MoviesApi.Api\MoviesApi.Api.csproj", "{5F94D6C8-0C04-45E8-A690-D5997C46FD18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7E08A7C-611D-4755-9187-74ED1BB2DC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E08A7C-611D-4755-9187-74ED1BB2DC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E08A7C-611D-4755-9187-74ED1BB2DC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E08A7C-611D-4755-9187-74ED1BB2DC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1188804-B126-481F-9B4D-C3D5AD53EF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1188804-B126-481F-9B4D-C3D5AD53EF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1188804-B126-481F-9B4D-C3D5AD53EF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1188804-B126-481F-9B4D-C3D5AD53EF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B780770-B6A5-4396-97D2-D2707F687C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B780770-B6A5-4396-97D2-D2707F687C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B780770-B6A5-4396-97D2-D2707F687C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B780770-B6A5-4396-97D2-D2707F687C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7E08A7C-611D-4755-9187-74ED1BB2DC40} = {A6C1C9FA-A839-4055-BA2B-2A5507895247}
+		{B3D564E8-A4CC-4829-B9B9-710B7E1E4564} = {A6C1C9FA-A839-4055-BA2B-2A5507895247}
+		{E1188804-B126-481F-9B4D-C3D5AD53EF69} = {2031535D-265D-4AA7-B2EF-55A59269007E}
+		{0B780770-B6A5-4396-97D2-D2707F687C00} = {2031535D-265D-4AA7-B2EF-55A59269007E}
+		{5F94D6C8-0C04-45E8-A690-D5997C46FD18} = {18611A2D-7BA9-4D7D-AE7D-174A8C4C8C88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39CC095D-7015-479E-AB96-AC73D6FA47A3}
+	EndGlobalSection
+EndGlobal

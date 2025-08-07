@@ -18,7 +18,7 @@ namespace MoviesApi.Persistence.Configurations
                 Id = 1,
                 Name = "Elektirik",
                 Priorty=1,
-                ParentID=0,
+                ParentId=0,
                 isDeleted=false,
                 CreatedDate=DateTime.Now,
             };
@@ -28,7 +28,7 @@ namespace MoviesApi.Persistence.Configurations
                 Id = 2,
                 Name = "Moda",
                 Priorty = 2,
-                ParentID = 0,
+                ParentId = 0,
                 isDeleted = false,
                 CreatedDate = DateTime.Now,
             };
@@ -38,7 +38,7 @@ namespace MoviesApi.Persistence.Configurations
                 Id = 3,
                 Name = "Bilgisayar",
                 Priorty = 1,
-                ParentID = 1,
+                ParentId = 1,
                 isDeleted = false,
                 CreatedDate = DateTime.Now,
             };
@@ -48,7 +48,7 @@ namespace MoviesApi.Persistence.Configurations
                 Id = 4,
                 Name = "Kadın",
                 Priorty = 1,
-                ParentID = 2,
+                ParentId = 2,
                 isDeleted = false,
                 CreatedDate = DateTime.Now,
             };

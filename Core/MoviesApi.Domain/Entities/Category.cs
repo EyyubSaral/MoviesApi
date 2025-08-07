@@ -22,7 +22,7 @@ namespace MoviesApi.Domain.Entities
             Priorty = priorty;
         }
 
-        public required int ParentID { get; set; }
+        public required int ParentId { get; set; }
         public required string Name{ get; set; }
         public required int Priorty { get; set; }
 

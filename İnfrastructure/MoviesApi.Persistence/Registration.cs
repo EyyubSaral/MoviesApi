@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MoviesApi.Application.Interfaces.Repositories;
 using MoviesApi.Persistence.Context;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace MoviesApi.Persistence
     {
         public static void AddPersistance(this IServiceCollection services,IConfiguration configuration) 
         {
-            services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppDbContext>(opt =>
+            opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IReadRepository<>),typeof(IReadRepository<>));
         }
     }
 }

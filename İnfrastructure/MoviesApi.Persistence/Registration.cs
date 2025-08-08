@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MoviesApi.Application.Interfaces.Repositories;
+using MoviesApi.Application.Interfaces.UnitOfWorks;
 using MoviesApi.Persistence.Context;
+using MoviesApi.Persistence.UnitOfWorks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +20,10 @@ namespace MoviesApi.Persistence
             services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped(typeof(IReadRepository<>),typeof(IReadRepository<>));
-            services.AddScoped(typeof(IReadRepository<>), typeof(IWriteRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>),typeof(IWriteRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(IWriteRepository<>));
 
-        }
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+         }
     }
 }

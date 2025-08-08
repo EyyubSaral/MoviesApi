@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Persistence.Repositories
 {
-    public class ReadRepository<T> : IReadRepository<T> where T : class, IEntityBase,new()
+    public class ReadRepository<T> : IWriteRepository<T> where T : class, IEntityBase,new()
     {
 
         private readonly DbContext dbContext;

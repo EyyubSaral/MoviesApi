@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MoviesApi.Mapper\MoviesApi.Mapper.csproj" />
     <ProjectReference Include="..\..\İnfrastructure\MoviesApi.Persistence\MoviesApi.Persistence.csproj" />
   </ItemGroup>
 

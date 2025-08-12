@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "İnfrastructure", "İnfrastructure", "{2031535D-265D-4AA7-B2EF-55A59269007E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Domain", "Core\MoviesApi.Domain\MoviesApi.Domain.csproj", "{E7E08A7C-611D-4755-9187-74ED1BB2DC40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.Domain", "Core\MoviesApi.Domain\MoviesApi.Domain.csproj", "{E7E08A7C-611D-4755-9187-74ED1BB2DC40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Application", "Core\MoviesApi.Application\MoviesApi.Application.csproj", "{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.Application", "Core\MoviesApi.Application\MoviesApi.Application.csproj", "{B3D564E8-A4CC-4829-B9B9-710B7E1E4564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.İnfrastructure", "İnfrastructure\MoviesApi.İnfrastructure\MoviesApi.İnfrastructure.csproj", "{E1188804-B126-481F-9B4D-C3D5AD53EF69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.İnfrastructure", "İnfrastructure\MoviesApi.İnfrastructure\MoviesApi.İnfrastructure.csproj", "{E1188804-B126-481F-9B4D-C3D5AD53EF69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Persistence", "İnfrastructure\MoviesApi.Persistence\MoviesApi.Persistence.csproj", "{0B780770-B6A5-4396-97D2-D2707F687C00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.Persistence", "İnfrastructure\MoviesApi.Persistence\MoviesApi.Persistence.csproj", "{0B780770-B6A5-4396-97D2-D2707F687C00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Api", "Presentation\MoviesApi.Api\MoviesApi.Api.csproj", "{5F94D6C8-0C04-45E8-A690-D5997C46FD18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesApi.Api", "Presentation\MoviesApi.Api\MoviesApi.Api.csproj", "{5F94D6C8-0C04-45E8-A690-D5997C46FD18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesApi.Mapper", "MoviesApi.Mapper\MoviesApi.Mapper.csproj", "{7C02722B-7FD2-4493-88D6-7C1F3C824A4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F94D6C8-0C04-45E8-A690-D5997C46FD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C02722B-7FD2-4493-88D6-7C1F3C824A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C02722B-7FD2-4493-88D6-7C1F3C824A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C02722B-7FD2-4493-88D6-7C1F3C824A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C02722B-7FD2-4493-88D6-7C1F3C824A4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{E1188804-B126-481F-9B4D-C3D5AD53EF69} = {2031535D-265D-4AA7-B2EF-55A59269007E}
 		{0B780770-B6A5-4396-97D2-D2707F687C00} = {2031535D-265D-4AA7-B2EF-55A59269007E}
 		{5F94D6C8-0C04-45E8-A690-D5997C46FD18} = {18611A2D-7BA9-4D7D-AE7D-174A8C4C8C88}
+		{7C02722B-7FD2-4493-88D6-7C1F3C824A4D} = {A6C1C9FA-A839-4055-BA2B-2A5507895247}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39CC095D-7015-479E-AB96-AC73D6FA47A3}

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.Internal;
-using Microsoft.EntityFrameworkCore.Metadata;
+
 
 namespace MoviesApi.Mapper.AutoMapper
 {

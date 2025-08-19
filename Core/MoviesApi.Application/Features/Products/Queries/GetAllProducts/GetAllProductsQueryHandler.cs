@@ -24,7 +24,7 @@ namespace MoviesApi.Application.Features.Products.Queries.GetAllProducts
         }
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
         {
-            var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x=>x.Include(b=>b.Brand));
+            var products = await unitOfWork.GetReadRepository<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
 
            var brand= mapper.Map<BrandDto,Brand>(new Brand());
 

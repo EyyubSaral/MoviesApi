@@ -1,6 +1,7 @@
 using MoviesApi.Persistence;
 using MoviesApi.Application;
 using MoviesApi.Mapper;
+using MoviesApi.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureEcxeptionHandleMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();

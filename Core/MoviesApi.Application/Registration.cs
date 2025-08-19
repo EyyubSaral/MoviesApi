@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using MoviesApi.Application.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace MoviesApi.Application
         public static void AddApplication(this IServiceCollection services) 
         {
             var assembly = Assembly.GetExecutingAssembly();
+
+            services.AddTransient<ExeceptionMiddleware>();
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly) );
         }

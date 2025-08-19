@@ -2,17 +2,13 @@
 using Microsoft.EntityFrameworkCore.Query;
 using MoviesApi.Application.Interfaces.Repositories;
 using MoviesApi.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MoviesApi.Persistence.Repositories
 {
-    public class ReadRepository<T> : IWriteRepository<T> where T : class, IEntityBase,new()
+    public class ReadRepository<T> : IReadRepository<T> where T : class, IEntityBase, new()
     {
 
         private readonly DbContext dbContext;

@@ -16,7 +16,7 @@ namespace MoviesApi.Persistence.Context
             
         }
 
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
@@ -25,6 +25,8 @@ namespace MoviesApi.Persistence.Context
         public DbSet<Category> Categorys{ get; set; }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductCategory> ProductCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

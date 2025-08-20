@@ -27,7 +27,7 @@ namespace MoviesApi.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProducts(DeleteProductCommandRequest request)
+        public async Task<IActionResult> CreateProducts(CreateProductCommandRequest request)
         {
              await mediator.Send(request);
 
@@ -44,7 +44,7 @@ namespace MoviesApi.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteProducts(DeleteProductCommandRequest request)
+        public async Task<IActionResult> DeleteProducts(CreateProductCommandRequest request)
         {
             await mediator.Send(request);
 

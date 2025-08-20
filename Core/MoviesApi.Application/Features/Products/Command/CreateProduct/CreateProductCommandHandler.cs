@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MoviesApi.Application.Features.Products.Rules;
 using MoviesApi.Application.Interfaces.UnitOfWorks;
 using MoviesApi.Domain.Entities;
 using System;
@@ -12,8 +13,8 @@ namespace MoviesApi.Application.Features.Products.Command.CreateProduct
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
-
-        public CreateProductCommandHandler(IUnitOfWork unitOfWork)
+        private readonly ProductRules productRules;
+        public CreateProductCommandHandler(IUnitOfWork unitOfWork,ProductRules productRules)
         {
             this.unitOfWork = unitOfWork;
         }
@@ -21,8 +22,22 @@ namespace MoviesApi.Application.Features.Products.Command.CreateProduct
 
         public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
+            IList<Product> products = await unitOfWork.GetReadRepository<Product>().GetAllAsync();
+
+            //   if (products.Any(x => x.Title == request.Title))
+            //        throw new Exception("aynı başlıkta ürün olamaz");
+
+            await productRules.ProductTitleMustNotBeSame(products, request.Title);
+
+            foreach (var item in products)
+            {
+                if (item.Title == request.Title) { }
+            }
+
             Product product = new(request.Title, request.Description,request.BrandId,request.Price,request.Discount);
-        
+
+            
+
             await unitOfWork.GetWriteRepository<Product>().AddAsync(product);
             if(await unitOfWork.SaveAsync() > 0)
             {

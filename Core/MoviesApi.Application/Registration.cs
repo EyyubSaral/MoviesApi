@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using MoviesApi.Application.Bases;
 using MoviesApi.Application.Behaviors;
 using MoviesApi.Application.Exceptions;
+using MoviesApi.Application.Features.Products.Rules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,7 @@ namespace MoviesApi.Application
             var assembly = Assembly.GetExecutingAssembly();
 
             services.AddTransient<ExeceptionMiddleware>();
+            services.AddRulesFromAssemblyContaining(assembly, typeof(BaseRules));
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly) );
 
@@ -27,6 +30,21 @@ namespace MoviesApi.Application
 
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+        }
+
+        private static IServiceCollection AddRulesFromAssemblyContaining(
+            this IServiceCollection services,
+            Assembly assembly,
+            Type type
+            )
+        {
+          var types= assembly.GetTypes().Where(t=>t.IsSubclassOf(type)&& type!=t ).ToList();
+            foreach (var item in types)
+                services.AddTransient(item);
+               
+            
+            return services;
+            
         }
     }
 }

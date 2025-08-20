@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<DeleteProductCommandRequest>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
@@ -19,7 +19,7 @@ namespace MoviesApi.Application.Features.Products.Command.CreateProduct
         }
 
 
-        public async Task Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
             Product product = new(request.Title, request.Description,request.BrandId,request.Price,request.Discount);
         
@@ -37,6 +37,7 @@ namespace MoviesApi.Application.Features.Products.Command.CreateProduct
                     await unitOfWork.SaveAsync();
                 }
             }
+            return Unit.Value;
         
         }
     }

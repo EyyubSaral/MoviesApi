@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.CreateProduct
 {
-    public class DeleteProductCommandRequest: IRequest
+    public class CreateProductCommandRequest: IRequest<Unit>
     {
         public string Title { get; set; }
         public string Description { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductCommanRequest:IRequest
+    public class UpdateProductCommanRequest:IRequest<Unit>
     {
 
         public  int Id { get; set; }

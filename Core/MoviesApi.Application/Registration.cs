@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using MoviesApi.Application.Behaviors;
 using MoviesApi.Application.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -18,6 +21,12 @@ namespace MoviesApi.Application
             services.AddTransient<ExeceptionMiddleware>();
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly) );
+
+            services.AddValidatorsFromAssembly(assembly);
+            ValidatorOptions.Global.LanguageManager.Culture = new System.Globalization.CultureInfo("tr");
+
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
         }
     }
 }

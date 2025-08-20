@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using SendGrid.Helpers.Errors.Model;
-using System.ComponentModel.DataAnnotations;
+
 
 
 namespace MoviesApi.Application.Exceptions
@@ -26,6 +27,14 @@ namespace MoviesApi.Application.Exceptions
             int statusCode = GetStatusCode(exception);
             httpContext.Response.ContentType = "application/json";
             httpContext.Response.StatusCode = statusCode;
+
+            if(exception.GetType()== typeof(ValidationException))
+                return httpContext.Response.WriteAsync(new ExceptionsModel
+                {
+                    Errors= ((ValidationException)exception).Errors.Select(x=>x.ErrorMessage),
+                    StatusCode = StatusCodes.Status400BadRequest,
+                }.ToString());
+            
 
             List<string> errors = new()
             {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductCommanHandler : IRequestHandler<UpdateProductCommanRequest>
+    public class UpdateProductCommanHandler : IRequestHandler<UpdateProductCommanRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -20,7 +20,7 @@ namespace MoviesApi.Application.Features.Products.Command.UpdateProduct
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task Handle(UpdateProductCommanRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateProductCommanRequest request, CancellationToken cancellationToken)
         {
             var product = await unitOfWork
                 .GetReadRepository<Product>()
@@ -46,8 +46,9 @@ namespace MoviesApi.Application.Features.Products.Command.UpdateProduct
 
                 await unitOfWork.GetWriteRepository<Product>().UpdateAsync(product);
                 await unitOfWork.SaveAsync();
-            
+
             }
+            return Unit.Value;
         }
     }
 }

@@ -1,5 +1,6 @@
 using MoviesApi.Persistence;
 using MoviesApi.Application;
+using MoviesApi.Ýnfrastructure;
 using MoviesApi.Mapper;
 using MoviesApi.Application.Exceptions;
 
@@ -21,6 +22,8 @@ builder.Configuration
 
 
 builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 

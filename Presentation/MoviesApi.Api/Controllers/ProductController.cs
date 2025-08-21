@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MoviesApi.Application.Features.Products.Command.CreateProduct;
@@ -19,6 +20,7 @@ namespace MoviesApi.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllProducts(GetAllProductsQueryRequest request) 
         {
             var response = await mediator.Send(request);

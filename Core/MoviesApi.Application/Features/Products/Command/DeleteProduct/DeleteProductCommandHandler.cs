@@ -1,4 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using MoviesApi.Application.Bases;
+using MoviesApi.Application.Interfaces.AutoMapper;
 using MoviesApi.Application.Interfaces.UnitOfWorks;
 using MoviesApi.Domain.Entities;
 using System;
@@ -9,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.DeleteProduct
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest,Unit>
+    public class DeleteProductCommandHandler :BaseHandler, IRequestHandler<DeleteProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public DeleteProductCommandHandler(IUnitOfWork unitOfWork)
+        public DeleteProductCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.unitOfWork = unitOfWork;
         }

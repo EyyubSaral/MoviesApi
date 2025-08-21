@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using MoviesApi.Application.Bases;
 using MoviesApi.Application.Interfaces.AutoMapper;
 using MoviesApi.Application.Interfaces.UnitOfWorks;
 using MoviesApi.Domain.Entities;
@@ -10,15 +12,12 @@ using System.Threading.Tasks;
 
 namespace MoviesApi.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductCommanHandler : IRequestHandler<UpdateProductCommanRequest,Unit>
+    public class UpdateProductCommanHandler :BaseHandler, IRequestHandler<UpdateProductCommanRequest,Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
+      
 
-        public UpdateProductCommanHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public UpdateProductCommanHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
         }
         public async Task<Unit> Handle(UpdateProductCommanRequest request, CancellationToken cancellationToken)
         {

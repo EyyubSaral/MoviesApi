@@ -27,5 +27,11 @@ namespace MoviesApi.Application.Features.Auth.Rules
             if (expiryDate <= DateTime.Now) throw new RefreshTokenShouldNotBeExpiredException();
             return Task.CompletedTask;
         }
+
+        public Task EmaiAddressShouldBeValid(User? user)
+        {
+            if (user is null) throw new EmaiAddressShouldBeValidException();
+            return Task.CompletedTask;
+        }
     }
 }
